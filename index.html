@@ -26,23 +26,40 @@
             else {
             console.log("Scissors")
             }
+            
         };
         
+        getComputerChoice();
         // getComputerChoice() check to see if works completed
 
         // Step 3: Get human input
         // function is required which takes input of human
         
-        let getHumanChoice = prompt("Rock, Paper, Scissors? ");
-            
-        // console.log(getHumanChoice)
+        function getHumanChoice() { 
+            return prompt("Rock, Paper, Scissors? ");
+        };
+        
+        getHumanChoice()
+
+        // console.log(getHumanChoice())
 
         // Step 4: player scores
         const humanScore = 0
         const computerScore = 0
 
-        
+        // Step 5: Write single game logic 
 
+        function playRound(humanChoice, computerChoice) {
+            var humanChoice = getHumanChoice();
+            var computerChoice = getComputerChoice;
+            return;
+        }
+
+        const humanSelection = getHumanChoice;
+        const computerSelection = getComputerChoice;
+
+    console.log(playRound(humanSelection, computerSelection));
+        // error returned at this point saying undefined
     </script>
 </body>
 </html>
