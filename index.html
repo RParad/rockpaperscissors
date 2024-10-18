@@ -12,21 +12,19 @@
         // function randomly returns a value  ---- Completed
         function getComputerChoice() {
             
-            function getRandomInt(max) {
-                return Math.floor(Math.random() * max);
-            }
-            let choice = getRandomInt(3)
-
+            // function getRandomInt(max) {
+            //     return Math.floor(Math.random() * max);
+            // }
+            let choice = Math.floor(Math.random() * 3);
             if (choice === 0) {
-            console.log("rock");
+            return ("rock");
             } 
             else if (choice === 1) {
-            console.log("paper");
+            return ("paper");
             }
             else {
-            console.log("scissors")
+            return ("scissors");
             }
-            
         };
         
        
@@ -35,9 +33,12 @@
         // Step 3: Get human input
         // function is required which takes input of human
         
+
         function getHumanChoice() { 
-            let inputPrompt = prompt("Rock, Paper, Scissors? ");
-            return console.log("You picked: " + inputPrompt.toLocaleLowerCase())
+            let inputPrompt = prompt("Rock, Paper, Scissors? ").toLowerCase();
+            // let inputPrompt = inputPrompt.toLocaleLowerCase();
+            // return lowerCaseInput;
+            return inputPrompt;
         };
         
         
@@ -49,16 +50,30 @@
         const computerScore = 0
 
         // Step 5: Write single game logic 
-
+        
 
         function playRound(humanSelection, computerSelection) {
             const humanChoice = getHumanChoice();
             const computerChoice = getComputerChoice();
+
+            if (humanChoice == "rock" && computerChoice == "scissors" ||
+                humanChoice == "scissors" && computerChoice == "paper" ||
+                humanChoice == "paper" && computerChoice == "rock") {
+
+                return console.log("You win! " + humanChoice + " beats " + computerChoice + "!")
+                }
+            else if (humanChoice == computerChoice) {
+               
+               return console.log("It's a Draw! Both picked " + computerChoice)
+                }
+            else {
+                return console.log("You lose! " + computerChoice + " beats " + humanChoice)
+            }        
             return;
         }
 
         playRound()
-        // Now functioning computer can pick and the player can pick 
+        // works not sure how, had to delete the print that checked 
     </script>
 </body>
 </html>
