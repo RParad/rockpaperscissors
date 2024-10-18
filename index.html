@@ -18,28 +18,29 @@
             let choice = getRandomInt(3)
 
             if (choice === 0) {
-            console.log("Rock");
+            console.log("rock");
             } 
             else if (choice === 1) {
-            console.log("Paper");
+            console.log("paper");
             }
             else {
-            console.log("Scissors")
+            console.log("scissors")
             }
             
         };
         
-        getComputerChoice();
+       
         // getComputerChoice() check to see if works completed
 
         // Step 3: Get human input
         // function is required which takes input of human
         
         function getHumanChoice() { 
-            return prompt("Rock, Paper, Scissors? ");
+            let inputPrompt = prompt("Rock, Paper, Scissors? ");
+            return console.log("You picked: " + inputPrompt.toLocaleLowerCase())
         };
         
-        getHumanChoice()
+        
 
         // console.log(getHumanChoice())
 
@@ -49,17 +50,15 @@
 
         // Step 5: Write single game logic 
 
-        function playRound(humanChoice, computerChoice) {
-            var humanChoice = getHumanChoice();
-            var computerChoice = getComputerChoice;
+
+        function playRound(humanSelection, computerSelection) {
+            const humanChoice = getHumanChoice();
+            const computerChoice = getComputerChoice();
             return;
         }
 
-        const humanSelection = getHumanChoice;
-        const computerSelection = getComputerChoice;
-
-    console.log(playRound(humanSelection, computerSelection));
-        // error returned at this point saying undefined
+        playRound()
+        // Now functioning computer can pick and the player can pick 
     </script>
 </body>
 </html>
