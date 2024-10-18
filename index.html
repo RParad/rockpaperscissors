@@ -46,8 +46,8 @@
         // console.log(getHumanChoice())
 
         // Step 4: player scores
-        const humanScore = 0
-        const computerScore = 0
+        let humanScore = 0
+        let computerScore = 0
 
         // Step 5: Write single game logic 
         
@@ -60,20 +60,23 @@
                 humanChoice == "scissors" && computerChoice == "paper" ||
                 humanChoice == "paper" && computerChoice == "rock") {
 
-                return console.log("You win! " + humanChoice + " beats " + computerChoice + "!")
+                humanScore++;    
+                return console.log("You win! " + humanChoice + " beats " + computerChoice + "!" + " Your score is " + humanScore + " Computer score: " + computerScore)
                 }
             else if (humanChoice == computerChoice) {
                
-               return console.log("It's a Draw! Both picked " + computerChoice)
+               return console.log("It's a Draw! Both picked " + computerChoice + ", The score is: " + "Human: " + humanScore + " Bot: " + computerScore)
                 }
             else {
-                return console.log("You lose! " + computerChoice + " beats " + humanChoice)
+                computerScore++;
+                return console.log("You lose! " + computerChoice + " beats " + humanChoice + " Your Score: " + humanScore + " Computer score: " + computerScore)
             }        
             return;
         }
 
         playRound()
-        // works not sure how, had to delete the print that checked 
+        // number increment and score has been added!
+        
     </script>
 </body>
 </html>
