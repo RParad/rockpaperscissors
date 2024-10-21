@@ -1,11 +1,60 @@
 
-            
+// Call to retrieve the elements
+var rockBtn = document.getElementById("rock");
+var paperBtn = document.getElementById("paper");
+var scissorsBtn = document.getElementById("scissors");
+var playBtn = document.getElementById("playgame");
+
+// Create listeners for the buttons
+
+playBtn.addEventListener('click', function(){
+    playGame();
+})
+
+// var rockChoice = rockBtn.addEventListener("click", function(e) {
+//                     // clicked = true;
+//                     console.log("Button has been clicked")
+//                     return clickResponse;
+//                     } );  
+
+// var paperChoice = paperBtn.addEventListener("click", function(e) {
+//                     // clicked = true;
+//                     console.log("Button has been clicked")
+//                     return "paper";
+//             } );  
+
+// var scissorsChoice = scissorsBtn.addEventListener("click", function(e) {
+//                     // clicked = true;
+//                     console.log("Button has been clicked")
+//                     return "scissors";
+//             } );  
+     
             function playGame() {
                 let humanScore = 0
                 let computerScore = 0
+
+
+
                 while (humanScore <= 4 && computerScore <= 4 ) {
                     
-                
+                    var rockChoice = rockBtn.addEventListener("click", function(e) {
+                        // clicked = true;
+                        console.log("Button has been clicked")
+                        return 'rock';
+                        } );  
+    
+                    var paperChoice = paperBtn.addEventListener("click", function(e) {
+                        // clicked = true;
+                        console.log("Button has been clicked")
+                        return "paper";
+                    } );  
+    
+                     var scissorsChoice = scissorsBtn.addEventListener("click", function(e) {
+                        // clicked = true;
+                        console.log("Button has been clicked")
+                        return "scissors";
+                     } );  
+         
             
                 // Step two: Create a function for get computer
                 // function randomly returns a value  ---- Completed
@@ -33,13 +82,16 @@
                 // function is required which takes input of human
                 
 
-                function getHumanChoice() { 
-                    let inputPrompt = prompt("Rock, Paper, Scissors? ").toLowerCase();
-                    // let inputPrompt = inputPrompt.toLocaleLowerCase();
-                    // return lowerCaseInput;
-                    return inputPrompt;
+                function getHumanChoice(clickResponse) { 
+                    // let inputPrompt = prompt("Rock, Paper, Scissors? ").toLowerCase();
+                    // // let inputPrompt = inputPrompt.toLocaleLowerCase();
+                    // // return lowerCaseInput;
+                    // return inputPrompt;
+                    // Try get the choice of the player
+
+
                 };
-                
+            
                 
 
                 // console.log(getHumanChoice())
@@ -49,11 +101,11 @@
                 // let computerScore = 0
 
                 // Step 5: Write single game logic 
-                
+                const humanChoice = getHumanChoice();
+                const computerChoice = getComputerChoice();
 
-                function playRound(humanSelection, computerSelection) {
-                    const humanChoice = getHumanChoice();
-                    const computerChoice = getComputerChoice();
+                function playRound(humanChoice, computerChoice) {
+                   
 
                     if (humanChoice == "rock" && computerChoice == "scissors" ||
                         humanChoice == "scissors" && computerChoice == "paper" ||
@@ -75,16 +127,16 @@
 
                 playRound ();
 
-            }
-            if (humanScore >= 5) {
-                return console.log("Game over! You Win")
-            }
-            else  {
-                return console.log("Game over! You lose")
-            }
-        }
+            } 
+            // if (humanScore >= 5) {
+            //     return console.log("Game over! You Win")
+            // }
+            // else  {
+            //     return console.log("Game over! You lose")
+            // }
+        } 
             
-            playGame();
+            // playGame();
 
             // function playGame() {
             //     if (humanScore <= 5 || computerScore <= 5 ) {
